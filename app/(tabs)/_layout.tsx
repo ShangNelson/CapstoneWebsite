@@ -2,6 +2,10 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, useWindowDimensions, Animated } from 'react-native';
 import { TabView, TabBar, SceneRendererProps, NavigationState } from 'react-native-tab-view';
 import HomeScreen from './index';
+import StatementScreen from './statement';
+import AwardsScreen from './awards';
+import AcademicScreen from './academic';
+import CreativeScreen from './creative';
 
 type Route = {
   key: string;
@@ -20,10 +24,10 @@ const Layout: React.FC = () => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState<Route[]>([
     { key: 'home', title: 'Home' },
-    { key: 'products', title: 'Products' },
-    { key: 'career', title: 'Career' },
-    { key: 'about', title: 'About' },
-    { key: 'blog', title: 'Blog' },
+    { key: 'statement', title: 'Statement' },
+    { key: 'awards', title: 'Awards' },
+    { key: 'academic', title: 'Academic' },
+    { key: 'creative', title: 'Creative' },
   ]);
 
   const renderTabBar = (props: SceneRendererProps & { navigationState: State }) => (
@@ -43,9 +47,6 @@ const Layout: React.FC = () => {
     <View style={styles.container}>
       {/* Header Row with Logo, Tabs, and Buttons */}
       <View style={styles.header}>
-        <View style={styles.logoContainer}>
-          <Image source={require('@/assets/images/ideaflo.png')} style={styles.logo} />
-        </View>
 
         {/* Manually rendered TabBar outside of TabView */}
         <View style={styles.tabBar}>
@@ -55,15 +56,6 @@ const Layout: React.FC = () => {
             layout: { width: layout.width, height: layout.height }, // Include layout property
             jumpTo: (key) => setIndex(routes.findIndex(route => route.key === key)),
           })}
-        </View>
-
-        <View style={styles.buttonsContainer}>
-          <TouchableOpacity style={styles.buttonLogin}>
-            <Text style={styles.buttonTextLogin}>Login</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.buttonSignUp}>
-            <Text style={styles.buttonTextSignUp}>Sign Up</Text>
-          </TouchableOpacity>
         </View>
       </View>
 
@@ -75,14 +67,14 @@ const Layout: React.FC = () => {
             switch (route.key) {
               case 'home':
                 return <HomeScreen />;
-              case 'products':
-                return <SecondRoute />;
-              case 'career':
-                return <ThirdRoute />;
-              case 'about':
-                return <FourthRoute />;
-              case 'blog':
-                return <FifthRoute />;
+              case 'statement':
+                return <StatementScreen />;
+              case 'awards':
+                return <AwardsScreen />;
+              case 'academic':
+                return <AcademicScreen />;
+              case 'creative':
+                return <CreativeScreen />;
               default:
                 return null;
             }
@@ -105,7 +97,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 10,
-    height: "8%",
+    height: "7%",
     backgroundColor: '#FFFFFF',
   },
   logoContainer: {
@@ -115,9 +107,10 @@ const styles = StyleSheet.create({
     maxHeight: '80%',
   },
   logo: {
-    width: 180,
-    height: 40,
+    width: 60,
+    height: 60,
     marginRight: 10,
+    marginTop: 10,
   },
   tabBar: {
     flex: 1,
