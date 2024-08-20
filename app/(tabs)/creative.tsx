@@ -1,7 +1,13 @@
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import {Image, StyleSheet} from 'react-native';
 
-export default function CreativeScreen() {
+
+type CreativeScreenProps = {
+  setIndex: React.Dispatch<React.SetStateAction<number>>;
+};
+
+
+export default function CreativeScreen({setIndex} : CreativeScreenProps) {
     return (
 <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image, useWindowDimensions, Animated } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, useWindowDimensions, Animated, Modal, FlatList, TouchableWithoutFeedback } from 'react-native';
 import { TabView, TabBar, SceneRendererProps, NavigationState } from 'react-native-tab-view';
 import HomeScreen from './index';
 import StatementScreen from './statement';
@@ -14,11 +14,6 @@ type Route = {
 
 type State = NavigationState<Route>;
 
-const SecondRoute = () => <View style={[styles.scene, { backgroundColor: '#ffffff' }]} />;
-const ThirdRoute = () => <View style={[styles.scene, { backgroundColor: '#ffffff' }]} />;
-const FourthRoute = () => <View style={[styles.scene, { backgroundColor: '#ffffff' }]} />;
-const FifthRoute = () => <View style={[styles.scene, { backgroundColor: '#ffffff' }]} />;
-
 const Layout: React.FC = () => {
   const layout = useWindowDimensions();
   const [index, setIndex] = React.useState(0);
@@ -29,6 +24,9 @@ const Layout: React.FC = () => {
     { key: 'academic', title: 'Academic' },
     { key: 'creative', title: 'Creative' },
   ]);
+  const [showDropdown, setShowDropdown] = React.useState(false);
+
+  const isSmallScreen = layout.width < 600; // Adjust this threshold based on your design
 
   const renderTabBar = (props: SceneRendererProps & { navigationState: State }) => (
     <TabBar
@@ -36,52 +34,99 @@ const Layout: React.FC = () => {
       style={styles.tabBar}
       indicatorStyle={styles.indicator}
       renderLabel={({ route, focused }) => (
-        <Text style={[styles.tabLabel, { color: focused ? '#000000' : '#333333' }]}>
+        <Text style={[styles.tabLabel, { color: focused ? '#000000' : '#888888' }]}>
           {route.title}
         </Text>
       )}
     />
   );
 
+  const handleTabPress = (key: string) => {
+    setIndex(routes.findIndex(route => route.key === key));
+    if (showDropdown) setShowDropdown(false); // Close dropdown when a tab is selected
+  };
+
+  const handleOutsidePress = () => {
+    if (showDropdown) setShowDropdown(false);
+  };
+
+  const renderDropdown = () => (
+    <Modal
+      transparent
+      animationType="slide"
+      visible={showDropdown}
+      onRequestClose={() => setShowDropdown(false)}
+    >
+      <TouchableWithoutFeedback onPress={handleOutsidePress}>
+        <View style={styles.dropdownOverlay}>
+          <TouchableWithoutFeedback>
+            <View style={styles.dropdownContainer}>
+              <FlatList
+                data={routes}
+                keyExtractor={(item) => item.key}
+                renderItem={({ item }) => (
+                  <TouchableOpacity
+                    style={styles.dropdownItem}
+                    onPress={() => handleTabPress(item.key)}
+                  >
+                    <Text style={styles.dropdownItemText}>{item.title}</Text>
+                  </TouchableOpacity>
+                )}
+              />
+            </View>
+          </TouchableWithoutFeedback>
+        </View>
+      </TouchableWithoutFeedback>
+    </Modal>
+  );
+
   return (
     <View style={styles.container}>
-      {/* Header Row with Logo, Tabs, and Buttons */}
       <View style={styles.header}>
-
-        {/* Manually rendered TabBar outside of TabView */}
-        <View style={styles.tabBar}>
-          {renderTabBar({
-            navigationState: { index, routes },
-            position: new Animated.Value(index),
-            layout: { width: layout.width, height: layout.height }, // Include layout property
-            jumpTo: (key) => setIndex(routes.findIndex(route => route.key === key)),
-          })}
-        </View>
+        {isSmallScreen ? (
+          <>
+            <TouchableOpacity
+              style={styles.dropdownButton}
+              onPress={() => setShowDropdown(!showDropdown)}
+            >
+              <Text style={styles.dropdownButtonText}>☰</Text>
+            </TouchableOpacity>
+            {renderDropdown()}
+          </>
+        ) : (
+          <View style={styles.tabBar}>
+            {renderTabBar({
+              navigationState: { index, routes },
+              position: new Animated.Value(index),
+              layout: { width: layout.width, height: layout.height },
+              jumpTo: (key) => setIndex(routes.findIndex(route => route.key === key)),
+            })}
+          </View>
+        )}
       </View>
 
-      {/* Page Content Below the Custom TabBar */}
       <View style={styles.content}>
         <TabView
           navigationState={{ index, routes }}
           renderScene={({ route }) => {
             switch (route.key) {
               case 'home':
-                return <HomeScreen />;
+                return <HomeScreen setIndex={setIndex} />;
               case 'statement':
-                return <StatementScreen />;
+                return <StatementScreen setIndex={setIndex} />;
               case 'awards':
-                return <AwardsScreen />;
+                return <AwardsScreen setIndex={setIndex} />;
               case 'academic':
-                return <AcademicScreen />;
+                return <AcademicScreen setIndex={setIndex} />;
               case 'creative':
-                return <CreativeScreen />;
+                return <CreativeScreen setIndex={setIndex} />;
               default:
                 return null;
             }
           }}
           onIndexChange={setIndex}
           initialLayout={{ width: layout.width }}
-          renderTabBar={() => null} // No TabBar inside TabView
+          renderTabBar={() => null}
         />
       </View>
     </View>
@@ -100,18 +145,6 @@ const styles = StyleSheet.create({
     height: "7%",
     backgroundColor: '#FFFFFF',
   },
-  logoContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    maxWidth: '20%',
-    maxHeight: '80%',
-  },
-  logo: {
-    width: 60,
-    height: 60,
-    marginRight: 10,
-    marginTop: 10,
-  },
   tabBar: {
     flex: 1,
     backgroundColor: '#FFFFFF',
@@ -124,47 +157,39 @@ const styles = StyleSheet.create({
   tabLabel: {
     fontSize: 16,
   },
-  buttonsContainer: {
-    flexDirection: 'row',
-    flexShrink: 0,
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    maxWidth: '20%',
-    maxHeight: '20%',
-  },
-  buttonLogin: {
-    backgroundColor: '#ffffff',
-    borderRadius: 25,
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    marginHorizontal: 5,
-    borderWidth: 1,
-    borderColor: '#007BFF',
-  },
-  buttonSignUp: {
-    backgroundColor: '#007BFF',
-    borderRadius: 25,
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    marginHorizontal: 5,
-  },
-  buttonTextLogin: {
-    color: '#007BFF',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  buttonTextSignUp: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
   content: {
     flex: 1,
-    backgroundColor: '#f0f0f0',
-    padding: 10,
   },
-  scene: {
+  dropdownOverlay: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  dropdownContainer: {
+    width: '80%',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 10,
+    elevation: 5,
+  },
+  dropdownItem: {
+    padding: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ddd',
+  },
+  dropdownItemText: {
+    fontSize: 16,
+    color: '#333',
+  },
+  dropdownButton: {
+    padding: 10,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 5,
+    marginLeft: 'auto',
+  },
+  dropdownButtonText: {
+    fontSize: 24,
+    color: '#333',
   },
 });
 

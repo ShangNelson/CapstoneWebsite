@@ -1,7 +1,12 @@
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import {Image, StyleSheet} from 'react-native';
 
-export default function AcademicScreen() {
+
+type AwardScreenProps = {
+  setIndex: React.Dispatch<React.SetStateAction<number>>;
+};
+
+export default function AcademicScreen({setIndex} : AwardScreenProps) {
     return (
 <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
