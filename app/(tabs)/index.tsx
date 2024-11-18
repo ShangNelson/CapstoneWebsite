@@ -42,13 +42,13 @@ const PopupMenu = ({ visible, onClose }: { visible: boolean, onClose: () => void
               <Text style={styles.popupTitle}>Connect with me!</Text>
               <TextInput
                 style={styles.input}
-                placeholder="Name"
+                placeholder="Your Name"
                 value={name}
                 onChangeText={setName}
               />
               <TextInput
                 style={styles.input}
-                placeholder="Email"
+                placeholder="Your Email Address"
                 keyboardType="email-address"
                 value={email}
                 onChangeText={setEmail}
@@ -98,7 +98,7 @@ export default function HomeScreen({ setIndex }: HomeScreenProps) {
         {/* About Me Section */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>About Me</Text>
-          <Text style={styles.aboutText}>Hiya, my name is Shang Nelson, and I am a student of Weber State University and NUAMES. I work professionally as a baker and I enjoy spending my free time working on personal programming projects, expanding my skills and refining old ones. I am currently a mathematics major at Weber State, and will attend graduate school at the University of Utah in Fall of 2026. I hope to become a professor in mathematics. </Text>
+          <Text style={styles.aboutText}>Heyo, my name is Shang Nelson, and I am a student of Weber State University and NUAMES. I work professionally as a baker and I enjoy spending my free time working on personal programming projects, expanding my skills and refining old ones. I am currently a mathematics major at Weber State, and will attend graduate school at the University of Utah in Fall of 2026. I hope to become a professor in mathematics. </Text>
         </View>
 
         {/* Contact Section */}
@@ -145,6 +145,7 @@ const styles = StyleSheet.create({
     padding: 20, // Increased padding for spacing
     alignItems: 'flex-start', // Align content to the left
     borderColor: 'black',
+    minWidth: width * .25,
     borderWidth: 2,
     borderRadius: 25,
   },

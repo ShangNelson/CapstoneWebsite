@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { View, Image, StyleSheet, Dimensions, Modal, Text, TouchableWithoutFeedback } from 'react-native';
 
-const { height: screenHeight, width: screenWidth } = Dimensions.get('window');
+const {  width: screenWidth, height: screenHeight, } = Dimensions.get('window');
 
 // ImageModal Component
 const ImageModal = ({ visible, onClose, imageSource }: { visible: boolean, onClose: () => void, imageSource?: any }) => {
   const [imageSize, setImageSize] = useState<{ width: number, height: number } | null>(null);
   const [loading, setLoading] = useState(true);
-
+  var RATIO = .5;
   useEffect(() => {
     if (imageSource) {
       if (typeof imageSource === 'object' && imageSource.uri) {
         // Remote image
         Image.getSize(imageSource.uri, (width, height) => {
+          console.log("Width: " + width + "; Height: " + height);
           const aspectRatio = width / height;
-          const imageHeight = screenHeight * 0.9; // 90% of screen height
+          const imageHeight = screenHeight * RATIO;
           const imageWidth = imageHeight * aspectRatio;
           setImageSize({ width: imageWidth, height: imageHeight });
           setLoading(false);
@@ -25,7 +26,7 @@ const ImageModal = ({ visible, onClose, imageSource }: { visible: boolean, onClo
       } else {
         // Local image
         // Use default or known dimensions
-        const localImageSize = { width: screenWidth * 0.9, height: screenWidth * 0.9 }; // Default size for local images
+        const localImageSize = { width: screenWidth * RATIO,height: screenWidth * RATIO }; // Default size for local images
         setImageSize(localImageSize);
         setLoading(false);
       }

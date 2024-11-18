@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, Image, ScrollView, Button, StyleSheet, Dimensions, Modal, TouchableOpacity, TouchableWithoutFeedback, TextInput } from 'react-native';
+import React from 'react';
+import { View, Text, ScrollView, StyleSheet, Dimensions} from 'react-native';
 
 const { width } = Dimensions.get('window');
 
@@ -10,22 +10,21 @@ type StatementScreenProps = {
 export default function StatementScreen({ setIndex }: StatementScreenProps) {
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} contentContainerStyle={{alignItems: 'center'}}>
 
+<Text style={styles.sectionTitle}>My Statement</Text>
       <View style={styles.body}>
         {/* About Me Section */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>My Statement</Text>
-          <Text style={styles.aboutText}>Lorem ipsum odor amet, consectetuer adipiscing elit. Pulvinar est justo semper magnis ultrices. Suscipit nascetur nisi penatibus sem a sapien convallis. Laoreet nec amet iaculis vitae nullam vehicula. Erat nascetur sapien quisque aliquam, habitant aenean quisque aliquam facilisis. Dis bibendum pretium feugiat porttitor, curae senectus nullam molestie tristique. Facilisis himenaeos vestibulum porta vel elementum ullamcorper erat scelerisque. Efficitur quisque curabitur ad laoreet nec felis. {"\n"}{"\n"}
-Felis integer laoreet dictum cursus tortor quis sem potenti. Aliquam urna proin quam massa lectus ad lacinia. Eros justo malesuada consequat dictum, etiam fermentum erat vivamus. Tempor aenean accumsan laoreet fringilla cubilia consectetur rutrum auctor lacinia. Enim habitant elit congue nec faucibus consequat ad. Tincidunt himenaeos tincidunt ridiculus rhoncus pulvinar.{"\n"}{"\n"}
-Eu consequat aliquam vitae netus suscipit litora felis est. Lectus nostra habitasse taciti lobortis; cras mi etiam. Primis integer tincidunt faucibus donec ornare. Amet praesent eu dapibus dapibus mollis finibus finibus. Eleifend augue blandit eros dis vestibulum tincidunt conubia. Nunc praesent tempor nullam fermentum scelerisque. Nostra inceptos dignissim sapien tristique varius nostra id vivamus felis. Neque ante augue euismod phasellus; proin volutpat auctor parturient.{"\n"}{"\n"}
-Dictum bibendum egestas tempus posuere suscipit id. Semper libero rutrum molestie; vehicula donec feugiat ultricies. Netus magnis vitae vehicula, viverra massa et semper. Lacinia facilisi enim vulputate iaculis urna. Id blandit volutpat sollicitudin conubia dictum nulla iaculis tellus finibus. Sociosqu metus ultrices aliquet nullam, fringilla mus adipiscing imperdiet. Ornare feugiat efficitur at sed duis nullam maximus fringilla. Duis cras ullamcorper maximus augue euismod sem proin primis.{"\n"}{"\n"}
-Libero pulvinar habitasse laoreet ligula pharetra montes cursus dis id. Consequat blandit imperdiet aliquet torquent netus tellus. Vitae pulvinar phasellus conubia lacus cubilia aliquet vehicula placerat phasellus. Duis commodo ullamcorper hac elit cursus ut consequat inceptos mi. Venenatis quam purus id sodales adipiscing aliquet nec. Lacinia magna feugiat turpis turpis sollicitudin bibendum est nunc. Sem faucibus ultrices aliquam sodales magna class posuere porta dapibus.{"\n"}{"\n"}
-Efficitur phasellus vehicula, facilisis tincidunt ut nisl at praesent. Litora fermentum ex felis conubia nam. Hendrerit ante magnis senectus, interdum sit dis maecenas viverra. Ultrices leo quis, molestie nostra class sodales nec. Facilisi placerat lacus himenaeos a in varius. Auctor magna felis commodo aptent ut nascetur metus. Lectus auctor mi nibh sodales risus felis et nunc. Scelerisque aenean fringilla viverra; pharetra egestas gravida augue. Dapibus vel augue pulvinar varius libero interdum tortor odio tempus.{"\n"}{"\n"}
-Libero molestie taciti platea eros vitae dictumst amet. Odio viverra faucibus taciti pellentesque vestibulum aptent eget. Elit posuere ultrices arcu mollis amet inceptos dignissim. Ex convallis dolor aptent integer nullam primis luctus. Suscipit curabitur habitasse nunc efficitur sollicitudin ex morbi. Cras litora maecenas vestibulum quam varius vitae taciti magnis. Ante sapien ante convallis non sollicitudin natoque vehicula tempus. Pretium platea consectetur venenatis cras varius vehicula nullam. Dictum maximus risus arcu ac sit urna viverra. Nunc sapien rutrum eleifend; urna nisi mus.{"\n"}{"\n"}
-Maecenas torquent pretium nullam tortor, leo molestie inceptos condimentum. Cubilia dis ridiculus blandit habitant finibus erat vulputate malesuada. Luctus sociosqu habitasse ornare velit placerat arcu. Lectus donec odio dis vulputate duis pellentesque in. Litora facilisi tempus egestas justo venenatis. Bibendum ultrices amet eleifend venenatis dis pulvinar. Volutpat aliquet efficitur dolor fermentum dapibus. Atempor donec euismod facilisi dapibus felis.{"\n"}{"\n"}
-Posuere vel cubilia sem tellus molestie scelerisque. Gravida interdum rhoncus fames nec nunc. Sociosqu nunc venenatis fusce, convallis felis dignissim mattis nibh. Erat ullamcorper nunc nascetur at euismod pellentesque parturient pharetra. Scelerisque litora viverra tempus, aenean in lacinia tristique nunc. Lectus cubilia arcu potenti tempor ante ut conubia ut amet. Mus blandit placerat potenti adipiscing dictumst egestas eget lorem nunc.{"\n"}{"\n"}
-Tincidunt metus tortor dapibus vel nec nec magnis odio hac. Bibendum nulla porta potenti convallis at. Curabitur neque consequat velit eros facilisi. Est tortor inceptos sit faucibus; mus faucibus eu vestibulum. Purus felis eleifend tempus praesent quis sed maecenas vestibulum. Imperdiet tempus lacus nec senectus at ornare dis ex.</Text>
+          <Text style={styles.aboutText}>Martial arts has changed my life. In my elementary school, every Valentine's day, we would make custom boxes that encompassed our hobbies and interests, and everyone would go around and give little candies, notes or gifts in each box. At the end, we could go through our boxes and see what we had.{"\n"}{"\n"}
+            When I was 8, in the third grade, I had a friend handing out invitations to a local Taekwondo studio. Of course, as any eight-year-old would, I thought anything martial arts related would be the coolest thing in the world, as though an opening to adventure. So I asked my mother to let me go, and she agreed reluctantly.{"\n"}{"\n"}
+            This led me to try something new, and I have spent the last 9 years learning, practicing, and improving my skills, not only in Taekwondo, but also my life, changing what I value and the beliefs I have. Through Taekwondo, I have learned many life skills and developed habits that help me everyday. Some of the most important habits and behaviors I learned from Taekwondo, including respect, perseverance, and appreciation.{"\n"}{"\n"}
+            Taekwondo taught me how to be respectful to others. Through discipline and time, I learned to respect people, especially those younger, less experienced, or different from me in some way. Respect to me isn’t just being nice and polite, but it is about understanding others, and giving them the time and effort that they deserve as another person.{"\n"}{"\n"}
+            Taekwondo taught me perseverance and growth. Even when I wanted to quit, which happened on more than one occasion, I kept going, and am better, happier, and glad that I did. I learned to try new things at every opportunity and to accept and push for change and growth. To me, perseverance means that even when the path is difficult or when we feel like giving up, we push forward because we have a goal in mind. As we persevere, we continue to grow through different trials, troubles, and obstacles. These are what helped refine me to be the person I am today.{"\n"}{"\n"}
+            Taekwondo taught me to appreciate different cultures and their styles. I found a fascination and love for Korean culture and traditions. This led me to study the Korean language and to appreciate the differences in the cultures. One of the biggest aspects in their culture that I love is the emphasis on respect, even teaching and instilling it into their children at a young age. {"\n"}{"\n"}
+            Perhaps most importantly, Taekwondo has taught me the importance of community. Since I started Taekwondo, I developed lasting friendships with people I would never have even seen before without it. I have met people that have left a mark in my life, and have helped me grow further. We are able to connect and share experiences at the dojang, and are able to support one another as we continue training and learning.{"\n"}{"\n"}
+            This simple invite and decision changed the entire course of my life. From taekwondo, I made friends that I had never had, and I still have them today. I learned to value the sense of community you get with people who share a mutual trait. I try to bring community everywhere with me now, and find things to relate to others everywhere. Taekwondo has shaped who I am as a martial artist, and as a person: It has developed my sense of respect, perseverance, and appreciation.{"\n"}{"\n"}
+          </Text>
         </View>
       </View>
     </ScrollView>
@@ -39,16 +38,14 @@ const styles = StyleSheet.create({
   },
   body: {
     flex: 1,
-    width: '66%', // Take up the full width
+    width: '50%',
     alignSelf: 'center',
-    padding: 20, // Increased padding for spacing
-    alignItems: 'flex-start', // Align content to the left
+    padding: 20, 
     borderColor: 'black',
     borderWidth: 2,
     borderRadius: 25,
   },
   section: {
-    marginBottom: 30,
     width: '100%', // Ensure sections take full width
   },
   sectionTitle: {

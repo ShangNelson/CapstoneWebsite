@@ -6,7 +6,7 @@ import StatementScreen from './statement';
 import AwardsScreen from './awards';
 import AcademicScreen from './academic';
 import CreativeScreen from './creative';
-
+import CareerScreen from './career';
 type Route = {
   key: string;
   title: string;
@@ -19,14 +19,15 @@ const Layout: React.FC = () => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState<Route[]>([
     { key: 'home', title: 'Home' },
-    { key: 'statement', title: 'Statement' },
     { key: 'awards', title: 'Awards' },
+    { key: 'career', title: 'Career' },
+    { key: 'statement', title: 'Statement' },
     { key: 'academic', title: 'Academic' },
     { key: 'creative', title: 'Creative' },
   ]);
   const [showDropdown, setShowDropdown] = React.useState(false);
 
-  const isSmallScreen = layout.width < 600; // Adjust this threshold based on your design
+  const isSmallScreen = layout.width < 800; // Adjust this threshold based on your design
 
   const renderTabBar = (props: SceneRendererProps & { navigationState: State }) => (
     <TabBar
@@ -120,6 +121,8 @@ const Layout: React.FC = () => {
                 return <AcademicScreen setIndex={setIndex} />;
               case 'creative':
                 return <CreativeScreen setIndex={setIndex} />;
+              case 'career':
+                return <CareerScreen setIndex={setIndex} />
               default:
                 return null;
             }

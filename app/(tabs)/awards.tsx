@@ -1,6 +1,5 @@
-import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { View, Text, Image, ScrollView, StyleSheet, Dimensions } from 'react-native';
-import RecognitionItem from './recognitionImage';
+import SectionItem from './recognitionImage';
 
 const { width } = Dimensions.get('window');
 
@@ -22,16 +21,18 @@ export default function AwardScreen({setIndex}: AwardScreenProps) {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Awards</Text>
           <View style={styles.awardItem}>
-            <RecognitionItem
-              title="Second Degree Black Belt"
-              details='Awarded by Jeons World Martial Arts, October 2022'
-              imageSource={require('@/assets/images/bgLess.png')}/>
+            <SectionItem
+              title='BYU Cyber Security CTF'
+              details='Utah, Platinum League, 1st Place, November 2023' />
+              <SectionItem
+              title='MirAftabi Award'
+              details='Awarded by the Mathematics department, Weber State University, April 2024'
+              imageSource={require('@/assets/images/MirAftabi.png')}/>
+              <SectionItem
+              title='Roy & Elva Miller Memorial Scholarship'
+              details='Awarded through Weber State University for academic excellence, May 2024' />
           </View>
           <View style={styles.awardItem}>
-            <RecognitionItem
-            title='MirAftabi Award'
-            details='Awarded by the Mathematics department, Weber State University, April 2024'
-            imageSource={require('@/assets/images/MirAftabi.png')}/>
           </View>
         </View>
 
@@ -39,12 +40,19 @@ export default function AwardScreen({setIndex}: AwardScreenProps) {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Certificates</Text>
           <View style={styles.certificateItem}>
-            <Text style={styles.certificateTitle}>Certified Full Stack Developer</Text>
-            <Text style={styles.certificateDetails}>Completed comprehensive training on Full Stack Development, 2023.</Text>
+            <SectionItem
+            title='Architectural Design CTE'
+            details='Utah Career and Technical Design: Decemember 2022' />
+            <SectionItem
+            title='Interior Design CTE'
+            details='Utah Career and Technical Design: May 2022' />
+            <SectionItem
+            title='CRLA Level 1 Certified'
+            details='CRLA Training completion level 1. May, 2024' />
+
           </View>
           <View style={styles.certificateItem}>
-            <Text style={styles.certificateTitle}>Advanced Mathematics Certification</Text>
-            <Text style={styles.certificateDetails}>Specialized certification in Advanced Mathematics, 2022.</Text>
+
           </View>
         </View>
 
@@ -52,12 +60,13 @@ export default function AwardScreen({setIndex}: AwardScreenProps) {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Other Recognitions</Text>
           <View style={styles.recognitionItem}>
-            <Text style={styles.recognitionTitle}>Volunteer of the Year</Text>
-            <Text style={styles.recognitionDetails}>Recognized for exceptional volunteer service, 2023.</Text>
+            <SectionItem
+              title="Second Degree Black Belt"
+              details='Awarded by Jeons World Martial Arts, October 2022'
+              imageSource={require('@/assets/images/bgLess.png')}/>
           </View>
           <View style={styles.recognitionItem}>
-            <Text style={styles.recognitionTitle}>Community Leadership Award</Text>
-            <Text style={styles.recognitionDetails}>Awarded for leadership and contributions to the community, 2022.</Text>
+
           </View>
         </View>
       </View>

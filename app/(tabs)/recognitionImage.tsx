@@ -4,7 +4,7 @@ import ImageModal from './imageModal'; // Adjust the import path as needed
 
 const { width } = Dimensions.get('window');
 
-const RecognitionItem = ({ title, details, imageSource }: { title: string, details: string, imageSource?: any }) => {
+const SectionItem = ({ title, details, imageSource }: { title: string, details?: string, imageSource?: any }) => {
   const [isModalVisible, setModalVisible] = useState(false);
 
   const handleImagePress = () => {
@@ -30,8 +30,7 @@ const RecognitionItem = ({ title, details, imageSource }: { title: string, detai
       <ImageModal
         visible={isModalVisible}
         onClose={handleCloseModal}
-        imageSource={imageSource}
-      />
+        imageSource={imageSource}/>
     </View>
   );
 };
@@ -68,4 +67,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RecognitionItem;
+export default SectionItem;
