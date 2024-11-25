@@ -42,9 +42,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     padding: 10,
-    backgroundColor: 'white',
+    backgroundColor: '#FFE6E6',
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   itemImage: {
     width: width * 0.1, // Adjust width as needed
@@ -59,11 +59,13 @@ const styles = StyleSheet.create({
   itemTitle: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: '#3c2a13',
     marginBottom: 5,
   },
   itemDetails: {
     fontSize: 16,
     lineHeight: 24,
+    color: '#3c2a13',
   },
 });
 

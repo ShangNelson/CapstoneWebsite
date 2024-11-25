@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 48,
+    color: '#3c2a13',
     fontWeight: 'bold',
   },
   body: {
@@ -47,50 +48,5 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     padding: 20,
     alignItems: 'flex-start',
-    borderColor: 'black',
-    borderWidth: 2,
-    borderRadius: 25,
-  },
-  section: {
-    marginBottom: 30,
-    width: '100%',
-  },
-  sectionTitle: {
-    fontSize: 40,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  awardItem: {
-    marginBottom: 20,
-  },
-  awardTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  awardDetails: {
-    fontSize: 16,
-    lineHeight: 24,
-  },
-  certificateItem: {
-    marginBottom: 20,
-  },
-  certificateTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  certificateDetails: {
-    fontSize: 16,
-    lineHeight: 24,
-  },
-  recognitionItem: {
-    marginBottom: 20,
-  },
-  recognitionTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  recognitionDetails: {
-    fontSize: 16,
-    lineHeight: 24,
   },
 });

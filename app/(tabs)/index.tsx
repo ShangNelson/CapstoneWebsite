@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, ScrollView, Button, StyleSheet, Dimensions, Modal, TouchableOpacity, TouchableWithoutFeedback, TextInput } from 'react-native';
+import { View, Text, Image, ScrollView, Button, StyleSheet, Dimensions, Modal, TouchableOpacity, TouchableWithoutFeedback, TextInput, ImageBackground } from 'react-native';
 
 const { width } = Dimensions.get('window');
 
@@ -84,33 +84,36 @@ export default function HomeScreen({ setIndex }: HomeScreenProps) {
     setPopupVisible(false);
   };
 
+
   return (
     <ScrollView style={styles.container}>
-      {/* Header Section */}
-      <View style={styles.header}>
-        <Image source={require('@/assets/images/bgLess.png')} style={styles.profileImage} />
-        <Text style={styles.name}>Shang Nelson</Text>
-        <Text style={styles.title}>Software Developer, Baker, Mathematics Major</Text>
-        {/* Add Social Media Icons Here */}
-      </View>
-
-      <View style={styles.body}>
-        {/* About Me Section */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>About Me</Text>
-          <Text style={styles.aboutText}>Heyo, my name is Shang Nelson, and I am a student of Weber State University and NUAMES. I work professionally as a baker and I enjoy spending my free time working on personal programming projects, expanding my skills and refining old ones. I am currently a mathematics major at Weber State, and will attend graduate school at the University of Utah in Fall of 2026. I hope to become a professor in mathematics. </Text>
+      <ImageBackground source={require('@/assets/images/moroccan_flower.png')}>
+        {/* Header Section */}
+        <View style={styles.header}>
+          <Image source={require('@/assets/images/bgLess.png')} style={styles.profileImage} />
+          <Text style={styles.name}>Shang Nelson</Text>
+          <Text style={styles.title}>Software Developer, Baker, Mathematics Major</Text>
+          {/* Add Social Media Icons Here */}
         </View>
 
-        {/* Contact Section */}
-        <View style={styles.section}>
-          <Button title="Let's Connect" onPress={handleButtonPress} />
-          <Text>Email: shangnelson6@gmail.com</Text>
-          <Text>Phone: 385-297-1979</Text>
-        </View>
-      </View>
+        <View style={styles.body}>
+          {/* About Me Section */}
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>About Me</Text>
+            <Text style={styles.aboutText}>Heyo, my name is Shang Nelson, and I am a student of Weber State University and NUAMES. I work professionally as a baker and I enjoy spending my free time working on personal programming projects, expanding my skills and refining old ones. I am currently a mathematics major at Weber State, and will attend graduate school at the University of Utah in Fall of 2026. I hope to become a professor in mathematics. </Text>
+          </View>
 
-      {/* Popup Menu */}
-      <PopupMenu visible={popupVisible} onClose={handleClosePopup} />
+          {/* Contact Section */}
+          <View style={styles.section}>
+            <Button title="Let's Connect" onPress={handleButtonPress} />
+            <Text style={styles.subText}>Email: shangnelson6@gmail.com</Text>
+            <Text style={styles.subText}>Phone: 385-297-1979</Text>
+          </View>
+        </View>
+
+        {/* Popup Menu */}
+        <PopupMenu visible={popupVisible} onClose={handleClosePopup} />
+      </ImageBackground>
     </ScrollView>
   );
 }
@@ -131,12 +134,13 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   name: {
+    color: '#3c2a13',
     fontSize: 48,
     fontWeight: 'bold',
   },
   title: {
     fontSize: 18,
-    color: 'gray',
+    color: '#3c2a13',
   },
   body: {
     flex: 1,
@@ -145,9 +149,6 @@ const styles = StyleSheet.create({
     padding: 20, // Increased padding for spacing
     alignItems: 'flex-start', // Align content to the left
     borderColor: 'black',
-    minWidth: width * .25,
-    borderWidth: 2,
-    borderRadius: 25,
   },
   section: {
     marginBottom: 30,
@@ -156,10 +157,12 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 40,
     fontWeight: 'bold',
+    color: '#3c2a13',
     marginBottom: 10,
   },
   aboutText: {
     fontSize: 16,
+    color: '#3c2a13',
     lineHeight: 24,
   },
   popupContainer: {
@@ -194,6 +197,7 @@ const styles = StyleSheet.create({
   closeButtonText: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: '#3c2a13',
   },
   popupTitle: {
     fontSize: 24,
@@ -221,8 +225,11 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   submitButtonText: {
-    color: 'white',
+    color: '#3c2a13',
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  subText: {
+    color: '#3c2a13',
   },
 });

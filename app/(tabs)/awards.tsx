@@ -77,7 +77,7 @@ export default function AwardScreen({setIndex}: AwardScreenProps) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+      padding: 20,
   },
   header: {
     alignItems: 'center',
@@ -91,17 +91,15 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 48,
+    color: '#3c2a13',
     fontWeight: 'bold',
   },
   body: {
     flex: 1,
-    width: '100%',
     alignSelf: 'center',
     padding: 20,
+    width: "66%",
     alignItems: 'flex-start',
-    borderColor: 'black',
-    borderWidth: 2,
-    borderRadius: 25,
   },
   section: {
     marginBottom: 30,
@@ -111,16 +109,19 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: 'bold',
     marginBottom: 10,
+    color: '#3c2a13',
   },
   awardItem: {
     marginBottom: 20,
   },
   awardTitle: {
     fontSize: 20,
+    color: '#3c2a13',
     fontWeight: 'bold',
   },
   awardDetails: {
     fontSize: 16,
+    color: '#3c2a13',
     lineHeight: 24,
   },
   certificateItem: {
@@ -128,10 +129,12 @@ const styles = StyleSheet.create({
   },
   certificateTitle: {
     fontSize: 20,
+    color: '#3c2a13',
     fontWeight: 'bold',
   },
   certificateDetails: {
     fontSize: 16,
+    color: '#3c2a13',
     lineHeight: 24,
   },
   recognitionItem: {
@@ -139,10 +142,12 @@ const styles = StyleSheet.create({
   },
   recognitionTitle: {
     fontSize: 20,
+    color: '#3c2a13',
     fontWeight: 'bold',
   },
   recognitionDetails: {
     fontSize: 16,
+    color: '#3c2a13',
     lineHeight: 24,
   },
 });

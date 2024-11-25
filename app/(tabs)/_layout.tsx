@@ -139,23 +139,23 @@ const Layout: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f4f9e9',
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     padding: 10,
     height: "7%",
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#f4f9e9',
   },
   tabBar: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#f4f9e9',
     width: "70%",
     marginHorizontal: "15%",
   },
   indicator: {
-    backgroundColor: '#333333',
+    backgroundColor: '#000000',
   },
   tabLabel: {
     fontSize: 16,

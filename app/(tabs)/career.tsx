@@ -43,7 +43,7 @@ export default function AwardScreen({setIndex}: AwardScreenProps) {
             {key: "Fast Learner"},
             {key: "Active Listener"},
             
-          ]} renderItem={({item}) => <Text style={{flex: 1, fontSize: 22, fontWeight: '500',padding:4,}}>{item.key}</Text>}/>
+          ]} renderItem={({item}) => <Text style={{flex: 1, fontSize: 22, fontWeight: '500',padding:4,color: '#3c2a13',}}>{item.key}</Text>}/>
         </View>
         
       </View>
@@ -62,17 +62,15 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 48,
+    color: '#3c2a13',
     fontWeight: 'bold',
   },
   body: {
     flex: 1,
-    width: '100%',
+    width: "66%",
     alignSelf: 'center',
     padding: 20,
     alignItems: 'flex-start',
-    borderColor: 'black',
-    borderWidth: 2,
-    borderRadius: 25,
   },
   section: {
     marginBottom: 30,
@@ -80,10 +78,12 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 40,
+    color: '#3c2a13',
     fontWeight: 'bold',
     marginBottom: 10,
   },
   sectionItems: {
+    color: '#3c2a13',
     marginBottom: 20,
   },
 });

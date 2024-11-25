@@ -1,5 +1,4 @@
 import { View, Text, Image, ScrollView, StyleSheet, Dimensions, Linking } from 'react-native';
-import SectionItem from './recognitionImage';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const { width } = Dimensions.get('window');
@@ -25,7 +24,7 @@ export default function CreativeScreen({setIndex}: CreativeScreenProps) {
             <View style={styles.itemContainer}>
               <View style={styles.textContainer}>
                 <Text style={styles.itemTitle}>View my Github!</Text>
-                <TouchableOpacity onPress={()=>Linking.openURL("https://github.com/Charlotta-16")} style={styles.itemContainer}>LINK!</TouchableOpacity>
+                <TouchableOpacity onPress={()=>Linking.openURL("https://github.com/Charlotta-16")} style={styles.buttonContainer}>LINK!</TouchableOpacity>
               </View>
             </View>
           </View>
@@ -45,25 +44,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 20,
   },
-  profileImage: {
-    width: width * 0.25,
-    height: width * 0.25,
-    borderRadius: 50,
-    marginBottom: 10,
-  },
   name: {
     fontSize: 48,
+    color: '#3c2a13',
     fontWeight: 'bold',
   },
   body: {
     flex: 1,
-    width: '100%',
+    width: '66%',
     alignSelf: 'center',
     padding: 20,
     alignItems: 'flex-start',
-    borderColor: 'black',
-    borderWidth: 2,
-    borderRadius: 25,
   },
   section: {
     marginBottom: 30,
@@ -71,6 +62,7 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 40,
+    color: '#3c2a13',
     fontWeight: 'bold',
     marginBottom: 10,
   },
@@ -81,7 +73,21 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     padding: 10,
-    backgroundColor: 'white',
+    backgroundColor: '#FFE6E6',
+    color: '#3c2a13',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  
+  
+  buttonContainer: {
+    marginBottom: 20,
+    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    backgroundColor: '#',
+    color: '#3c2a13',
     flexDirection: 'row',
     alignItems: 'center',
   },
@@ -92,11 +98,13 @@ const styles = StyleSheet.create({
   },
   itemTitle: {
     fontSize: 20,
+    color: '#3c2a13',
     fontWeight: 'bold',
     marginBottom: 5,
   },
   itemDetails: {
     fontSize: 16,
+    color: '#3c2a13',
     lineHeight: 24,
   },
 });

@@ -38,23 +38,22 @@ const styles = StyleSheet.create({
   },
   body: {
     flex: 1,
-    width: '50%',
+    width: '66%',
     alignSelf: 'center',
     padding: 20, 
-    borderColor: 'black',
-    borderWidth: 2,
-    borderRadius: 25,
   },
   section: {
     width: '100%', // Ensure sections take full width
   },
   sectionTitle: {
     fontSize: 40,
+    color: '#3c2a13',
     fontWeight: 'bold',
     marginBottom: 10,
   },
   aboutText: {
     fontSize: 16,
     lineHeight: 24,
+    color: '#3c2a13',
   },
 });
