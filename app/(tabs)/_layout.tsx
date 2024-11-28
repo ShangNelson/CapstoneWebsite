@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, useWindowDimensions, Animated, Modal, FlatList, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, useWindowDimensions, Animated, Modal, FlatList, TouchableWithoutFeedback, ImageBackground } from 'react-native';
 import { TabView, TabBar, SceneRendererProps, NavigationState } from 'react-native-tab-view';
 import HomeScreen from './index';
 import StatementScreen from './statement';
@@ -82,64 +82,77 @@ const Layout: React.FC = () => {
   );
 
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        {isSmallScreen ? (
-          <>
-            <TouchableOpacity
-              style={styles.dropdownButton}
-              onPress={() => setShowDropdown(!showDropdown)}
-            >
-              <Text style={styles.dropdownButtonText}>☰</Text>
-            </TouchableOpacity>
-            {renderDropdown()}
-          </>
-        ) : (
-          <View style={styles.tabBar}>
-            {renderTabBar({
-              navigationState: { index, routes },
-              position: new Animated.Value(index),
-              layout: { width: layout.width, height: layout.height },
-              jumpTo: (key) => setIndex(routes.findIndex(route => route.key === key)),
-            })}
-          </View>
-        )}
-      </View>
+      /*<ImageBackground style={styles.container} source={require("@/assets/images/moroccan-flower.png")}>*/
+      <View style={styles.container}>
 
-      <View style={styles.content}>
-        <TabView
-          navigationState={{ index, routes }}
-          renderScene={({ route }) => {
-            switch (route.key) {
-              case 'home':
-                return <HomeScreen setIndex={setIndex} />;
-              case 'statement':
-                return <StatementScreen setIndex={setIndex} />;
-              case 'awards':
-                return <AwardsScreen setIndex={setIndex} />;
-              case 'academic':
-                return <AcademicScreen setIndex={setIndex} />;
-              case 'creative':
-                return <CreativeScreen setIndex={setIndex} />;
-              case 'career':
-                return <CareerScreen setIndex={setIndex} />
-              default:
-                return null;
-            }
-          }}
-          onIndexChange={setIndex}
-          initialLayout={{ width: layout.width }}
-          renderTabBar={() => null}
-        />
+        <View style={styles.overlay} />
+
+        <View style={styles.header}>
+          {isSmallScreen ? (
+            <>
+              <TouchableOpacity
+                style={styles.dropdownButton}
+                onPress={() => setShowDropdown(!showDropdown)}
+              >
+                <Text style={styles.dropdownButtonText}>☰</Text>
+              </TouchableOpacity>
+              {renderDropdown()}
+            </>
+          ) : (
+            <View style={styles.tabBar}>
+              {renderTabBar({
+                navigationState: { index, routes },
+                position: new Animated.Value(index),
+                layout: { width: layout.width, height: layout.height },
+                jumpTo: (key) => setIndex(routes.findIndex(route => route.key === key)),
+              })}
+            </View>
+          )}
+        </View>
+
+        <View style={styles.content}>
+          <TabView
+            navigationState={{ index, routes }}
+            renderScene={({ route }) => {
+              switch (route.key) {
+                case 'home':
+                  return <HomeScreen setIndex={setIndex} />;
+                case 'statement':
+                  return <StatementScreen setIndex={setIndex} />;
+                case 'awards':
+                  return <AwardsScreen setIndex={setIndex} />;
+                case 'academic':
+                  return <AcademicScreen setIndex={setIndex} />;
+                case 'creative':
+                  return <CreativeScreen setIndex={setIndex} />;
+                case 'career':
+                  return <CareerScreen setIndex={setIndex} />
+                default:
+                  return null;
+              }
+            }}
+            onIndexChange={setIndex}
+            initialLayout={{ width: layout.width }}
+            renderTabBar={() => null}
+          />
+        </View>
       </View>
-    </View>
+      //</ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignContent: "center",
     backgroundColor: '#f4f9e9',
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject, // This ensures it covers the entire ImageBackground
+    backgroundColor: 'rgba(244, 249, 233  , 0.5)', // Black with 50% opacity
   },
   header: {
     flexDirection: 'row',

@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     padding: 10,
-    backgroundColor: '#FFE6E6',
+    backgroundColor: '#FFF',
     flexDirection: 'row',
     alignItems: 'center'
   },

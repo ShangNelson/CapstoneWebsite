@@ -87,33 +87,31 @@ export default function HomeScreen({ setIndex }: HomeScreenProps) {
 
   return (
     <ScrollView style={styles.container}>
-      <ImageBackground source={require('@/assets/images/moroccan_flower.png')}>
-        {/* Header Section */}
-        <View style={styles.header}>
-          <Image source={require('@/assets/images/bgLess.png')} style={styles.profileImage} />
-          <Text style={styles.name}>Shang Nelson</Text>
-          <Text style={styles.title}>Software Developer, Baker, Mathematics Major</Text>
-          {/* Add Social Media Icons Here */}
+      {/* Header Section */}
+      <View style={styles.header}>
+        <Image source={require('@/assets/images/bgLess.png')} style={styles.profileImage} />
+        <Text style={styles.name}>Shang Nelson</Text>
+        <Text style={styles.title}>Software Developer, Baker, Mathematics Major</Text>
+        {/* Add Social Media Icons Here */}
+      </View>
+
+      <View style={styles.body}>
+        {/* About Me Section */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>About Me</Text>
+          <Text style={styles.aboutText}>Heyo, my name is Shang Nelson, and I am a student of Weber State University and NUAMES. I work professionally as a baker and I enjoy spending my free time working on personal programming projects, expanding my skills and refining old ones. I am currently a mathematics major at Weber State, and will attend graduate school at the University of Utah in Fall of 2026. I hope to become a professor in mathematics. </Text>
         </View>
 
-        <View style={styles.body}>
-          {/* About Me Section */}
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>About Me</Text>
-            <Text style={styles.aboutText}>Heyo, my name is Shang Nelson, and I am a student of Weber State University and NUAMES. I work professionally as a baker and I enjoy spending my free time working on personal programming projects, expanding my skills and refining old ones. I am currently a mathematics major at Weber State, and will attend graduate school at the University of Utah in Fall of 2026. I hope to become a professor in mathematics. </Text>
-          </View>
-
-          {/* Contact Section */}
-          <View style={styles.section}>
-            <Button title="Let's Connect" onPress={handleButtonPress} />
-            <Text style={styles.subText}>Email: shangnelson6@gmail.com</Text>
-            <Text style={styles.subText}>Phone: 385-297-1979</Text>
-          </View>
+        {/* Contact Section */}
+        <View style={styles.section}>
+          <Button title="Let's Connect" onPress={handleButtonPress} />
+          <Text style={styles.subText}>Email: shangnelson6@gmail.com</Text>
+          <Text style={styles.subText}>Phone: 385-297-1979</Text>
         </View>
+      </View>
 
-        {/* Popup Menu */}
-        <PopupMenu visible={popupVisible} onClose={handleClosePopup} />
-      </ImageBackground>
+      {/* Popup Menu */}
+      <PopupMenu visible={popupVisible} onClose={handleClosePopup} />
     </ScrollView>
   );
 }

@@ -1,44 +1,102 @@
-import { View, Text, Image, ScrollView, StyleSheet, Dimensions, Linking } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import React, { useEffect, useState } from 'react';
+import {
+  View,
+  Text,
+  ScrollView,
+  StyleSheet,
+  ActivityIndicator,
+  TouchableOpacity,
+  Linking,
+  Image,
+} from 'react-native';
 
-const { width } = Dimensions.get('window');
-
+// Define a type for the GitHub repositories
+type GitHubRepo = {
+  id: number;
+  name: string;
+  html_url: string;
+  description: string | null;
+};
 type CreativeScreenProps = {
   setIndex: React.Dispatch<React.SetStateAction<number>>;
 };
-
+const GITHUB_USERNAME = 'ShangNelson'; // Replace with your GitHub username
+const GITHUB_API_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos`;
 
 export default function CreativeScreen({setIndex}: CreativeScreenProps) {
-    return (
-      <ScrollView style={styles.container}>
-      {/* Header Section */}
+  const [repos, setRepos] = useState<GitHubRepo[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Fetch repositories from GitHub
+    const fetchRepos = async () => {
+      try {
+        const response = await fetch(GITHUB_API_URL);
+        if (!response.ok) throw new Error('Error fetching repositories');
+        const data: GitHubRepo[] = await response.json(); // Explicitly type the API response
+        setRepos(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRepos();
+  }, []);
+
+  const openRepo = (url: string) => {
+    Linking.openURL(url).catch((err) =>
+      console.error("Failed to open URL:", err)
+    );
+  };
+
+  return (
+    <ScrollView style={styles.container}>
+      {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.name}>Creative Works</Text>
+        <View style={styles.titleContainer}>
+          <Text style={styles.name}>Creative Works</Text>
+          <Image
+            source={require("@assets/images/github.png")}
+            style={styles.githubIcon}
+          />
+        </View>
       </View>
 
+      {/* Repositories Section */}
       <View style={styles.body}>
-        {/* Awards Section */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Github</Text>
-          <View style={{marginBottom:20,}}>
-            <View style={styles.itemContainer}>
-              <View style={styles.textContainer}>
-                <Text style={styles.itemTitle}>View my Github!</Text>
-                <TouchableOpacity onPress={()=>Linking.openURL("https://github.com/Charlotta-16")} style={styles.buttonContainer}>LINK!</TouchableOpacity>
-              </View>
-            </View>
-          </View>
-        </View>
-
+        {loading ? (
+          <ActivityIndicator size="large" color="#3c2a13" />
+        ) : repos.length > 0 ? (
+          repos.map((repo) => (
+            <TouchableOpacity
+              key={repo.id}
+              style={styles.repoCard}
+              onPress={() => openRepo(repo.html_url)}
+            >
+              <Text style={styles.repoName}>{repo.name}</Text>
+              <Text style={styles.repoDescription}>
+                {repo.description || 'No description available'}
+              </Text>
+            </TouchableOpacity>
+          ))
+        ) : (
+          <Text>No repositories found.</Text>
+        )}
       </View>
     </ScrollView>
-    )
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+  },
+  titleContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   header: {
     alignItems: 'center',
@@ -49,62 +107,37 @@ const styles = StyleSheet.create({
     color: '#3c2a13',
     fontWeight: 'bold',
   },
+  githubIcon: {
+    width: 40,
+    height: 40,
+    backgroundColor: "#f4f9e9",
+    resizeMode: "contain",
+  },
   body: {
     flex: 1,
-    width: '66%',
+    width: '90%',
     alignSelf: 'center',
     padding: 20,
-    alignItems: 'flex-start',
   },
-  section: {
-    marginBottom: 30,
-    width: '100%',
-  },
-  sectionTitle: {
-    fontSize: 40,
-    color: '#3c2a13',
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-
-  itemContainer: {
+  repoCard: {
     marginBottom: 20,
-    borderColor: 'black',
-    borderWidth: 1,
+    padding: 15,
     borderRadius: 10,
-    padding: 10,
-    backgroundColor: '#FFE6E6',
-    color: '#3c2a13',
-    flexDirection: 'row',
-    alignItems: 'center',
+    backgroundColor: '#f8f9fa',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
-  
-  
-  buttonContainer: {
-    marginBottom: 20,
-    borderColor: 'black',
-    borderWidth: 1,
-    borderRadius: 10,
-    padding: 10,
-    backgroundColor: '#',
-    color: '#3c2a13',
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  
-  textContainer: {
-    justifyContent: 'center',
-    flex: 1,
-  },
-  itemTitle: {
-    fontSize: 20,
-    color: '#3c2a13',
+  repoName: {
+    fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 5,
-  },
-  itemDetails: {
-    fontSize: 16,
     color: '#3c2a13',
-    lineHeight: 24,
+  },
+  repoDescription: {
+    fontSize: 14,
+    color: '#6c757d',
+    marginTop: 5,
   },
 });
