@@ -56,9 +56,9 @@ export default function CreativeScreen({setIndex}: CreativeScreenProps) {
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.titleContainer}>
-          <Text style={styles.name}>Creative Works</Text>
+          <Text style={styles.name}>Creative Works  </Text>
           <Image
-            source={require("@assets/images/github.png")}
+            source={require("@/assets/images/github.png")}
             style={styles.githubIcon}
           />
         </View>

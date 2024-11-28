@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
   },
   body: {
     flex: 1,
-    width: '50%', // Take up the full width
+    width: '66%', // Take up the full width
     alignSelf: 'center',
     padding: 20, // Increased padding for spacing
     alignItems: 'flex-start', // Align content to the left
