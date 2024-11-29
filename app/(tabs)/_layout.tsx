@@ -172,6 +172,8 @@ const styles = StyleSheet.create({
   },
   tabLabel: {
     fontSize: 16,
+    color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
   },
   content: {
     flex: 1,
@@ -195,7 +197,8 @@ const styles = StyleSheet.create({
   },
   dropdownItemText: {
     fontSize: 16,
-    color: '#333',
+    color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
   },
   dropdownButton: {
     padding: 10,
@@ -205,7 +208,8 @@ const styles = StyleSheet.create({
   },
   dropdownButtonText: {
     fontSize: 24,
-    color: '#333',
+    color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
   },
 });
 

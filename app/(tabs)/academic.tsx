@@ -19,10 +19,11 @@ export default function AcademicScreen({setIndex}: AcademicScreenProps) {
 
       <View style={styles.body}>  
         <Dropdown 
-        title='Essay on Superheros'
-        uri="https://docs.google.com/document/d/e/2PACX-1vTcaXJ1b84OaSIp2BAi3ep-CBnE1JVR2fmr3rOMcgaWZX13dtN1r5EXlzY8kJol6En5gQaF9-paZxQ3/pub?embedded=true"/>
-
-        <Dropdown title="Research Bibliography on Youth Sports" uri="https://docs.google.com/document/d/e/2PACX-1vQZ5J8ZKVWyXK2hFEXDXMmtsLFMGdYcGrkWUU37dck35PaPNtoVyVPxMLH61qMHFpSXp2XVYegNAJu5/pub?embedded=true"/>
+          title='Essay on Superheros'
+          uri="https://docs.google.com/document/d/e/2PACX-1vTcaXJ1b84OaSIp2BAi3ep-CBnE1JVR2fmr3rOMcgaWZX13dtN1r5EXlzY8kJol6En5gQaF9-paZxQ3/pub?embedded=true"/>
+        <Dropdown 
+          title="Research Bibliography on Youth Sports" 
+          uri="https://docs.google.com/document/d/e/2PACX-1vQZ5J8ZKVWyXK2hFEXDXMmtsLFMGdYcGrkWUU37dck35PaPNtoVyVPxMLH61qMHFpSXp2XVYegNAJu5/pub?embedded=true"/>
       </View>
     </ScrollView>
     )
@@ -40,6 +41,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 48,
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
     fontWeight: 'bold',
   },
   body: {

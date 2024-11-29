@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import { View, Text, Image, ScrollView, Button, StyleSheet, Dimensions, Modal, TouchableOpacity, TouchableWithoutFeedback, TextInput, ImageBackground } from 'react-native';
 
 const { width } = Dimensions.get('window');
@@ -12,16 +13,38 @@ const PopupMenu = ({ visible, onClose }: { visible: boolean, onClose: () => void
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = () => {
-    // Handle form submission here
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Message:', message);
-    // Clear the fields after submission
-    setName('');
-    setEmail('');
-    setMessage('');
+  
+const handleSubmit = () => {
+  if (!name || !email || !message) {
+    alert("All fields are required.");
+    return;
+  }
+
+  const templateParams = {
+    user_name: name,
+    user_email: email,
+    message: message,
   };
+
+  emailjs
+    .send(
+      'service_nxck3ab',
+      'template_9zk1vce',
+      templateParams,
+      'uUiV-mAoy_Iul98tj'
+    )
+    .then((response) => {
+      console.log('Email sent successfully!', response.status, response.text);
+      alert('Your message has been sent!');
+      setName('');
+      setEmail('');
+      setMessage('');
+    })
+    .catch((error) => {
+      console.error('Failed to send email.', error);
+      alert('Something went wrong. Please try again.');
+    });
+};
 
   const submit = () => {
     handleSubmit();
@@ -99,14 +122,16 @@ export default function HomeScreen({ setIndex }: HomeScreenProps) {
         {/* About Me Section */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>About Me</Text>
-          <Text style={styles.aboutText}>Heyo, my name is Shang Nelson, and I am a student of Weber State University and NUAMES. I work professionally as a baker and I enjoy spending my free time working on personal programming projects, expanding my skills and refining old ones. I am currently a mathematics major at Weber State, and will attend graduate school at the University of Utah in Fall of 2026. I hope to become a professor in mathematics. </Text>
+          <Text style={styles.aboutText}>Heyo, my name is Shang Nelson, and I am a student of Weber State University. I work professionally as a baker and I enjoy spending my free time working on personal programming projects, expanding my skills and refining old ones. I am currently a mathematics major at Weber State, and will attend graduate school at the University of Utah in Fall of 2026. I hope to become a professor of mathematics. </Text>
         </View>
 
         {/* Contact Section */}
         <View style={styles.section}>
-          <Button title="Let's Connect" onPress={handleButtonPress} />
           <Text style={styles.subText}>Email: shangnelson6@gmail.com</Text>
           <Text style={styles.subText}>Phone: 385-297-1979</Text>
+          <TouchableOpacity style={styles.submitButton} onPress={handleButtonPress} > 
+            <Text style={{color:"#FFF",fontWeight:"bold",fontSize:16}}>Let's Connect</Text>
+          </TouchableOpacity>
         </View>
       </View>
 
@@ -133,6 +158,7 @@ const styles = StyleSheet.create({
   },
   name: {
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
     fontSize: 48,
     fontWeight: 'bold',
   },
@@ -156,11 +182,13 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: 'bold',
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
     marginBottom: 10,
   },
   aboutText: {
     fontSize: 16,
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
     lineHeight: 24,
   },
   popupContainer: {
@@ -196,6 +224,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
   },
   popupTitle: {
     fontSize: 24,
@@ -218,16 +247,19 @@ const styles = StyleSheet.create({
   submitButton: {
     backgroundColor: '#007BFF',
     padding: 15,
-    borderRadius: 5,
+    borderRadius: 55,
     alignItems: 'center',
     width: '100%',
   },
   submitButtonText: {
-    color: '#3c2a13',
+    color: '#FFF',
+    fontFamily: 'Montserrat-Regular',
     fontSize: 16,
     fontWeight: 'bold',
   },
   subText: {
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
+    fontWeight: 'bold',
   },
 });

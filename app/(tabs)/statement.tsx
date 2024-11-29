@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 40,
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
     fontWeight: 'bold',
     marginBottom: 10,
   },
@@ -55,5 +56,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
   },
 });

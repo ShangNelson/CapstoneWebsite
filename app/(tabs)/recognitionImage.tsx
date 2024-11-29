@@ -60,12 +60,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
     marginBottom: 5,
   },
   itemDetails: {
     fontSize: 16,
     lineHeight: 24,
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
   },
 });
 

@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 48,
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
     fontWeight: 'bold',
   },
   body: {
@@ -110,6 +111,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 10,
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
   },
   awardItem: {
     marginBottom: 20,
@@ -117,11 +119,13 @@ const styles = StyleSheet.create({
   awardTitle: {
     fontSize: 20,
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
     fontWeight: 'bold',
   },
   awardDetails: {
     fontSize: 16,
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
     lineHeight: 24,
   },
   certificateItem: {
@@ -130,11 +134,13 @@ const styles = StyleSheet.create({
   certificateTitle: {
     fontSize: 20,
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
     fontWeight: 'bold',
   },
   certificateDetails: {
     fontSize: 16,
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
     lineHeight: 24,
   },
   recognitionItem: {
@@ -143,11 +149,13 @@ const styles = StyleSheet.create({
   recognitionTitle: {
     fontSize: 20,
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
     fontWeight: 'bold',
   },
   recognitionDetails: {
     fontSize: 16,
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
     lineHeight: 24,
   },
 });

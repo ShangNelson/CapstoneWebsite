@@ -46,6 +46,8 @@ const styles = StyleSheet.create({
   },
   dropdownTitle: {
     fontSize: 20,
+    color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
     fontWeight: 'bold',
   },
   dropdownContent: {
@@ -53,11 +55,5 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     width: '100%',
-  },
-  indentedParagraph: {
-    fontSize: 16,
-    color: '#555',
-    lineHeight: 22,
-    marginBottom: 10,
   },
 });

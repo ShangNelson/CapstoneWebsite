@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 48,
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
     fontWeight: 'bold',
   },
   githubIcon: {
@@ -134,6 +135,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: '#3c2a13',
+    fontFamily: 'Montserrat-Regular',
   },
   repoDescription: {
     fontSize: 14,
