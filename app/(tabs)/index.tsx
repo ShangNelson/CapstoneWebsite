@@ -152,6 +152,8 @@ const styles = StyleSheet.create({
   },
   profileImage: {
     width: width * 0.25,
+    minWidth: 250,
+    minHeight: 250,
     height: width * 0.25,
     borderRadius: 50,
     marginBottom: 10,
@@ -169,6 +171,7 @@ const styles = StyleSheet.create({
   body: {
     flex: 1,
     width: '66%', // Take up the full width
+    minWidth: 400,
     alignSelf: 'center',
     padding: 20, // Increased padding for spacing
     alignItems: 'flex-start', // Align content to the left
@@ -188,7 +191,7 @@ const styles = StyleSheet.create({
   aboutText: {
     fontSize: 16,
     color: '#3c2a13',
-    fontFamily: 'Montserrat-Regular',
+    fontFamily: 'Montserrat-Regular.ttf',
     lineHeight: 24,
   },
   popupContainer: {
