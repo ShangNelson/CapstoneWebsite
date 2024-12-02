@@ -39,14 +39,16 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   name: {
-    fontSize: 48,
+    fontSize: 50,
     color: '#3c2a13',
     fontFamily: 'Montserrat-Regular',
     fontWeight: 'bold',
+    marginTop: 15,
   },
   body: {
     flex: 1,
-    width: '66%',
+    width: "60%",
+    minWidth: 400,
     alignSelf: 'center',
     padding: 20,
     alignItems: 'flex-start',

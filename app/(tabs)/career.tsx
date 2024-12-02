@@ -62,14 +62,16 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   name: {
-    fontSize: 48,
+    marginTop: 15,
+    fontSize: 50,
     color: '#3c2a13',
     fontFamily: 'Montserrat-Regular',
     fontWeight: 'bold',
   },
   body: {
     flex: 1,
-    width: "66%",
+    width: "60%",
+    minWidth: 400,
     alignSelf: 'center',
     padding: 20,
     alignItems: 'flex-start',
@@ -79,10 +81,10 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   sectionTitle: {
-    fontSize: 40,
+    fontSize: 38,
     color: '#3c2a13',
     fontFamily: 'Montserrat-Regular',
-    fontWeight: 'bold',
+    fontWeight: '500',
     marginBottom: 10,
   },
   sectionItems: {

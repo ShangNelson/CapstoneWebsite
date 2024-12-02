@@ -40,9 +40,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     borderColor: 'black',
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: 30,
     padding: 10,
-    backgroundColor: '#FFF',
     flexDirection: 'row',
     alignItems: 'center'
   },
@@ -54,20 +53,21 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     justifyContent: 'center',
+    padding: 15,
     flex: 1,
   },
   itemTitle: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: '500',
     color: '#3c2a13',
-    fontFamily: 'Montserrat-Regular',
+    fontFamily: 'Montserrat-Regular.ttf',
     marginBottom: 5,
   },
   itemDetails: {
     fontSize: 16,
     lineHeight: 24,
     color: '#3c2a13',
-    fontFamily: 'Montserrat-Regular',
+    fontFamily: 'Montserrat-Regular.ttf',
   },
 });
 

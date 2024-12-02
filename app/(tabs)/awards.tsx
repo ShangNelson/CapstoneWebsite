@@ -90,8 +90,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   name: {
-    fontSize: 48,
+    fontSize: 50,
     color: '#3c2a13',
+    marginTop: 15,
     fontFamily: 'Montserrat-Regular',
     fontWeight: 'bold',
   },
@@ -99,7 +100,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: 'center',
     padding: 20,
-    width: "66%",
+    width: "60%",
+    minWidth: 400,
     alignItems: 'flex-start',
   },
   section: {
@@ -107,8 +109,8 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   sectionTitle: {
-    fontSize: 40,
-    fontWeight: 'bold',
+    fontSize: 38,
+    fontWeight: '500',
     marginBottom: 10,
     color: '#3c2a13',
     fontFamily: 'Montserrat-Regular',

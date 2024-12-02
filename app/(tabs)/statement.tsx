@@ -38,7 +38,8 @@ const styles = StyleSheet.create({
   },
   body: {
     flex: 1,
-    width: '66%',
+    width: "60%",
+    minWidth: 400,
     alignSelf: 'center',
     padding: 20, 
   },
@@ -46,7 +47,8 @@ const styles = StyleSheet.create({
     width: '100%', // Ensure sections take full width
   },
   sectionTitle: {
-    fontSize: 40,
+    fontSize: 50,
+    marginTop: 15,
     color: '#3c2a13',
     fontFamily: 'Montserrat-Regular',
     fontWeight: 'bold',
