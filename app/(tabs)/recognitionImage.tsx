@@ -4,7 +4,7 @@ import ImageModal from './imageModal'; // Adjust the import path as needed
 
 const { width } = Dimensions.get('window');
 
-const SectionItem = ({ title, details, imageSource }: { title: string, details?: string, imageSource?: any }) => {
+const SectionItem = ({ title, details, imageSource, style }: { title: string, details: string, imageSource?: any, style?: object }) => {
   const [isModalVisible, setModalVisible] = useState(false);
 
   const handleImagePress = () => {
@@ -14,12 +14,19 @@ const SectionItem = ({ title, details, imageSource }: { title: string, details?:
   const handleCloseModal = () => {
     setModalVisible(false);
   };
+
   return (
-    <View style={styles.itemContainer}>
+    <View style={[styles.itemContainer, style]}>
       <View style={styles.textContainer}>
         <Text style={styles.itemTitle}>{title}</Text>
-        <Text style={styles.itemDetails}>{details}</Text>
-      </View>
+        <Text style={styles.itemDetails}>
+          {details.split("\\n").map((line, index) => (
+            <Text key={index}>
+              {line}
+              {index < details.split('\\n').length - 1 && '\n'}
+            </Text>
+          ))}
+        </Text>      </View>
       {imageSource && (
         <TouchableOpacity onPress={handleImagePress}>
           <Image source={imageSource} style={styles.itemImage} />

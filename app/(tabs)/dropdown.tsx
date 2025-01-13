@@ -49,8 +49,8 @@ export default function Dropdown({ title, uri }: DropdownProps) {
 
 const styles = StyleSheet.create({
   dropdown: {
-    marginBottom: 20,
-    width: '100%', // Ensures the dropdown spans the available width
+    marginBottom: 20, // Space between dropdowns
+    width: '100%',
   },
   dropdownHeader: {
     backgroundColor: '#ddd',
@@ -58,8 +58,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center', // Centers the title and icon
-    alignSelf: 'stretch', // Ensures the button stretches to the parent's width
+    alignItems: 'center',
   },
   dropdownTitle: {
     fontSize: 20,
@@ -74,3 +73,4 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 });
+

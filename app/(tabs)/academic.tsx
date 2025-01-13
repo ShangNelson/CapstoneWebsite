@@ -1,5 +1,5 @@
 import { View, Text, Image, ScrollView, StyleSheet, Dimensions, } from 'react-native';
-import Iframe from 'react-iframe';
+import SectionItem from './recognitionImage';
 
 import Dropdown from './dropdown';
 const { width } = Dimensions.get('window');
@@ -16,14 +16,32 @@ export default function AcademicScreen({setIndex}: AcademicScreenProps) {
       <View style={styles.header}>
         <Text style={styles.name}>Academic Works</Text>
       </View>
-
-      <View style={styles.body}>  
+      <View style={styles.bodyWorks}>  
         <Dropdown 
           title='Essay on Superheros'
           uri="https://docs.google.com/document/d/e/2PACX-1vTcaXJ1b84OaSIp2BAi3ep-CBnE1JVR2fmr3rOMcgaWZX13dtN1r5EXlzY8kJol6En5gQaF9-paZxQ3/pub?embedded=true"/>
         <Dropdown 
           title="Research Bibliography on Youth Sports" 
           uri="https://docs.google.com/document/d/e/2PACX-1vQZ5J8ZKVWyXK2hFEXDXMmtsLFMGdYcGrkWUU37dck35PaPNtoVyVPxMLH61qMHFpSXp2XVYegNAJu5/pub?embedded=true"/>
+      </View>
+
+      <View style={styles.header}>
+        <Text style={styles.name}>Academic Acheivements</Text>
+      </View>
+
+      <View style={styles.bodyAcheivements}>  
+        <SectionItem
+          title='Student Grader'
+          details='Graded student assignments, offering quality feedback, for an Ordinary Differential Equations class'
+          style={styles.sectionItemStyle}/>
+        <SectionItem
+          title='Tutor'
+          details='Helped students understand and relate with Mathematics and Computer Science. CRLA Master Certified.'
+          style={styles.sectionItemStyle}/>
+        <SectionItem
+          title='Mathematics Club Secretary'
+          details='Helped organize and encourage attendance to club meetings, as well as handling budgeting for the club.'
+          style={styles.sectionItemStyle}/>
       </View>
     </ScrollView>
     )
@@ -32,25 +50,36 @@ export default function AcademicScreen({setIndex}: AcademicScreenProps) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: 20, // Ensure no overflow
   },
   header: {
     alignItems: 'center',
-    marginBottom: 20,
+    marginVertical: 10, // Reduced margin to minimize the gap
+    paddingBottom: 15,
   },
   name: {
     fontSize: 50,
     color: '#3c2a13',
     fontFamily: 'Montserrat-Regular',
     fontWeight: 'bold',
-    marginTop: 15,
   },
-  body: {
-    flex: 1,
-    width: "60%",
-    minWidth: 400,
+  bodyWorks: {
+    flex:1,
+    width: "60%", // Adjust width to parent container
     alignSelf: 'center',
-    padding: 20,
+    minWidth: 380,
     alignItems: 'flex-start',
+    marginBottom: 20, // Ensures separation from "Academic Achievements"
+  },
+  bodyAcheivements: {
+    width: "60%",
+    minWidth: 380,
+    alignSelf: 'center',
+    alignItems: 'center',
+  },
+  sectionItemStyle: {
+    width: "100%",
+    flex: 1,
+    alignSelf: 'center',
   },
 });

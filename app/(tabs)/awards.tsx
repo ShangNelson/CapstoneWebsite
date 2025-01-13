@@ -47,7 +47,7 @@ export default function AwardScreen({setIndex}: AwardScreenProps) {
             title='Interior Design CTE'
             details='Utah Career and Technical Design: May 2022' />
             <SectionItem
-            title='CRLA Level 1 Certified'
+            title='CRLA Level 2 Certified'
             details='CRLA Training completion level 1. May, 2024' />
 
           </View>
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     padding: 20,
     width: "60%",
-    minWidth: 400,
+    minWidth: 380,
     alignItems: 'flex-start',
   },
   section: {

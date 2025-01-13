@@ -25,13 +25,16 @@ export default function AwardScreen({setIndex}: AwardScreenProps) {
           <View style={styles.sectionItems}>
             <SectionItem
               title='Parsons Bakery, Utah'
-              details='Feburary 2022 - CURRENT' />
+              details='Baker, Cashier, Janitor\nFeburary 2022 - CURRENT' />
             <SectionItem
               title='Davis Learning Center, Weber State University'
-              details='January 2024 - CURRENT' />
+              details='Mathematics, Computer Science, Chemistry Tutor\nJanuary 2024 - CURRENT' />
             <SectionItem
               title='Jeons World Martial Arts, Utah'
-              details='July 2024 - CURRENT' />
+              details='Assistant Instructure\nJuly 2024 - CURRENT' />
+            <SectionItem
+              title='Mathematics Department, Weber State University'
+              details='Student Grader\nJanuary 2024 - CURRENT' />
           </View>
         </View>
         <View style={styles.section}>
@@ -71,7 +74,7 @@ const styles = StyleSheet.create({
   body: {
     flex: 1,
     width: "60%",
-    minWidth: 400,
+    minWidth: 380,
     alignSelf: 'center',
     padding: 20,
     alignItems: 'flex-start',

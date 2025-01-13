@@ -117,6 +117,7 @@ const styles = StyleSheet.create({
   body: {
     flex: 1,
     width: '66%',
+    minWidth: 380,
     alignSelf: 'center',
     padding: 20,
   },
