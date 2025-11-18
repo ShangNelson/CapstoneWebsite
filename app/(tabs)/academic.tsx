@@ -1,10 +1,9 @@
 import { View, Text, Image, ScrollView, StyleSheet, Dimensions, } from 'react-native';
 import SectionItem from './recognitionImage';
-import  PdfDropdown from './dropdownPDF';
+import  PdfButton from './dropdownPDF';
 import Dropdown from './dropdown';
 
-import MCMFinal from '@/assets/pdfs/MCM-Final.pdf';
-
+const MCMFinal = require('@/assets/pdfs/MCM-Final.pdf')
 const { width } = Dimensions.get('window');
 
 type AcademicScreenProps = {
@@ -21,8 +20,8 @@ export default function AcademicScreen({setIndex}: AcademicScreenProps) {
       </View>
 
       <View style={styles.bodyWorks}>  
-        <PdfDropdown 
-          title="MCM/ICM 2025 Final Paper"
+        <PdfButton 
+          title="Open MCM/ICM 2025 Final Paper"
           localPdf={MCMFinal}
         />
       </View>
