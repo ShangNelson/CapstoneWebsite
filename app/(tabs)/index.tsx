@@ -110,7 +110,7 @@ export default function HomeScreen({ setIndex }: HomeScreenProps) {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>About Me</Text>
           <Text style={styles.aboutText}>
-            Heyo, my name is Shang Nelson, and I am a student of Weber State University. I work
+            Hello, my name is Shang Nelson, and I am a student of Weber State University. I work
             professionally as a baker and enjoy personal programming projects. I am currently a
             mathematics major and plan to attend graduate school at the University of Utah in Fall
             2026. My goal is to become a professor of mathematics.

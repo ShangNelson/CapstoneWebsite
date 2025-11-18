@@ -22,15 +22,18 @@ export default function AwardScreen({setIndex}: AwardScreenProps) {
           <Text style={styles.sectionTitle}>Awards</Text>
           <View style={styles.awardItem}>
             <SectionItem
-              title='BYU Cyber Security CTF'
-              details='Utah, Platinum League, 1st Place, November 2023' />
-              <SectionItem
+              title='MCM/ICM 2025 Participant'
+              details='Awarded successful participant in the MCM/ICM 2025 Competition, Jan 2025' />
+            <SectionItem
+              title='Roy & Elva Miller Memorial Scholarship'
+              details='Awarded through Weber State University for academic excellence, May 2024' />
+            <SectionItem
               title='MirAftabi Award'
               details='Awarded by the Mathematics department, Weber State University, April 2024'
               imageSource={require('@/assets/images/MirAftabi.png')}/>
-              <SectionItem
-              title='Roy & Elva Miller Memorial Scholarship'
-              details='Awarded through Weber State University for academic excellence, May 2024' />
+            <SectionItem
+              title='BYU Cyber Security CTF'
+              details='Utah, Platinum League, 1st Place, November 2023' />
           </View>
           <View style={styles.awardItem}>
           </View>
@@ -41,15 +44,15 @@ export default function AwardScreen({setIndex}: AwardScreenProps) {
           <Text style={styles.sectionTitle}>Certificates</Text>
           <View style={styles.certificateItem}>
             <SectionItem
-            title='Architectural Design CTE'
-            details='Utah Career and Technical Design: Decemember 2022' />
+              title='Data Science and Applied Statistics Certificate'
+              details='Weber State University, May 2026' />
             <SectionItem
-            title='Interior Design CTE'
-            details='Utah Career and Technical Design: May 2022' />
+              title='Programming Essentials Certificate'
+              details='Weber State University, May 2025' />
             <SectionItem
-            title='CRLA Level 2 Certified'
-            details='CRLA Training completion level 1. May, 2024' />
-
+              title='CRLA Level 1 Certified'
+              details='CRLA Training completion level 1. May, 2024' />
+            
           </View>
           <View style={styles.certificateItem}>
 

@@ -1,7 +1,10 @@
 import { View, Text, Image, ScrollView, StyleSheet, Dimensions, } from 'react-native';
 import SectionItem from './recognitionImage';
-
+import  PdfDropdown from './dropdownPDF';
 import Dropdown from './dropdown';
+
+import MCMFinal from '@/assets/pdfs/MCM-Final.pdf';
+
 const { width } = Dimensions.get('window');
 
 type AcademicScreenProps = {
@@ -12,9 +15,22 @@ type AcademicScreenProps = {
 export default function AcademicScreen({setIndex}: AcademicScreenProps) {
     return (
       <ScrollView style={styles.container}>
+
+      <View style={styles.header}>
+        <Text style={styles.name}>Mathematics Works</Text>
+      </View>
+
+      <View style={styles.bodyWorks}>  
+        <PdfDropdown 
+          title="MCM/ICM 2025 Final Paper"
+          localPdf={MCMFinal}
+        />
+      </View>
+
+
       {/* Header Section */}
       <View style={styles.header}>
-        <Text style={styles.name}>Academic Works</Text>
+        <Text style={styles.name}>English Works</Text>
       </View>
       <View style={styles.bodyWorks}>  
         <Dropdown 
@@ -24,7 +40,7 @@ export default function AcademicScreen({setIndex}: AcademicScreenProps) {
           title="Research Bibliography on Youth Sports" 
           uri="https://docs.google.com/document/d/e/2PACX-1vQZ5J8ZKVWyXK2hFEXDXMmtsLFMGdYcGrkWUU37dck35PaPNtoVyVPxMLH61qMHFpSXp2XVYegNAJu5/pub?embedded=true"/>
       </View>
-
+    
       <View style={styles.header}>
         <Text style={styles.name}>Academic Acheivements</Text>
       </View>
