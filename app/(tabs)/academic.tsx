@@ -3,7 +3,6 @@ import SectionItem from './recognitionImage';
 import  PdfButton from './dropdownPDF';
 import Dropdown from './dropdown';
 
-const MCMFinal = require('@/assets/pdfs/MCM-Final.pdf')
 const { width } = Dimensions.get('window');
 
 type AcademicScreenProps = {
@@ -22,8 +21,11 @@ export default function AcademicScreen({setIndex}: AcademicScreenProps) {
       <View style={styles.bodyWorks}>  
         <PdfButton 
           title="Open MCM/ICM 2025 Final Paper"
-          localPdf={MCMFinal}
+          pdfPath={'/pdfs/MCM-Final.pdf'}
         />
+        <PdfButton
+          title="Open SCUDEM X 2025 Final Presentation"
+          pdfPath={'/pdfs/SCUDEM.pdf'} />
       </View>
 
 
@@ -32,12 +34,12 @@ export default function AcademicScreen({setIndex}: AcademicScreenProps) {
         <Text style={styles.name}>English Works</Text>
       </View>
       <View style={styles.bodyWorks}>  
-        <Dropdown 
+        <PdfButton 
           title='Essay on Superheros'
-          uri="https://docs.google.com/document/d/e/2PACX-1vTcaXJ1b84OaSIp2BAi3ep-CBnE1JVR2fmr3rOMcgaWZX13dtN1r5EXlzY8kJol6En5gQaF9-paZxQ3/pub?embedded=true"/>
-        <Dropdown 
+          pdfPath={'/pdfs/Research Paper 1.pdf'} />  
+        <PdfButton 
           title="Research Bibliography on Youth Sports" 
-          uri="https://docs.google.com/document/d/e/2PACX-1vQZ5J8ZKVWyXK2hFEXDXMmtsLFMGdYcGrkWUU37dck35PaPNtoVyVPxMLH61qMHFpSXp2XVYegNAJu5/pub?embedded=true"/>
+          pdfPath={'/pdfs/Research Paper 2.pdf'} />
       </View>
     
       <View style={styles.header}>
@@ -79,12 +81,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   bodyWorks: {
-    flex:1,
-    width: "60%", // Adjust width to parent container
-    alignSelf: 'center',
+    width: "60%",            // keeps them narrower than full width
     minWidth: 380,
-    alignItems: 'flex-start',
-    marginBottom: 20, // Ensures separation from "Academic Achievements"
+    alignSelf: 'center',     // centers the container itself
+    alignItems: 'center',    // centers children (buttons) horizontally
+    marginBottom: 20,
   },
   bodyAcheivements: {
     width: "60%",
@@ -96,5 +97,13 @@ const styles = StyleSheet.create({
     width: "100%",
     flex: 1,
     alignSelf: 'center',
+  },
+  button: {
+    backgroundColor: "#3c2a13",
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+    alignItems: "center",
+    margin: 8,               // adds space between buttons
   },
 });

@@ -4,25 +4,21 @@ import * as Linking from "expo-linking";
 
 type Props = {
   title: string;
-  localPdf: any; // require() asset
+  pdfPath: string | any; // string path for web, require() asset for native
 };
 
-export default function PdfButton({ title, localPdf }: Props) {
+export default function PdfButton({ title, pdfPath }: Props) {
   const handlePress = () => {
-    if (Platform.OS === "web") {
-      // Web: use localPdf.default if it exists
-      const pdfUri = typeof localPdf === "string" ? localPdf : localPdf.default;
-      if (!pdfUri) return;
+    let pdfUri: string;
 
-      const link = document.createElement("a");
-      link.href = pdfUri;
-      link.download = pdfUri.split("/").pop() || "document.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+    if (Platform.OS === "web") {
+      // Web: direct URL to PDF in public folder
+      pdfUri = typeof pdfPath === "string" ? pdfPath : pdfPath.default;
+      if (!pdfUri) return;
+      window.open(pdfUri, "_blank"); // open PDF in a new tab
     } else {
-      // iOS / Android: open PDF in default viewer
-      const pdfUri = localPdf.localUri ?? localPdf.uri ?? localPdf;
+      // Native: open PDF in system viewer
+      pdfUri = pdfPath.localUri ?? pdfPath.uri ?? pdfPath;
       Linking.openURL(pdfUri);
     }
   };

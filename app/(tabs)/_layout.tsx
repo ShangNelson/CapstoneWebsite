@@ -23,7 +23,7 @@ const Layout: React.FC = () => {
     { key: 'career', title: 'Career' },
     { key: 'statement', title: 'Statement' },
     { key: 'academic', title: 'Academic' },
-    { key: 'creative', title: 'Creative' },
+    { key: 'creative', title: 'Github' },
   ]);
   const [showDropdown, setShowDropdown] = React.useState(false);
 
