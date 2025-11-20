@@ -46,17 +46,13 @@ export default function AcademicScreen({setIndex}: AcademicScreenProps) {
         <Text style={styles.name}>Academic Acheivements</Text>
       </View>
 
-      <View style={styles.bodyAcheivements}>  
+      <View style={styles.bodyAcheivements}>
         <SectionItem
-          title='Student Grader'
-          details='Graded student assignments, offering quality feedback, for an Ordinary Differential Equations class'
+          title='Mathematics Club President -- 2025-2026'
+          details='Organized outreach to students accross campus through stands setup at events. Handled budget and funding.'
           style={styles.sectionItemStyle}/>
         <SectionItem
-          title='Tutor'
-          details='Helped students understand and relate with Mathematics and Computer Science. CRLA Master Certified.'
-          style={styles.sectionItemStyle}/>
-        <SectionItem
-          title='Mathematics Club Secretary'
+          title='Mathematics Club Secretary -- 2024-2025'
           details='Helped organize and encourage attendance to club meetings, as well as handling budgeting for the club.'
           style={styles.sectionItemStyle}/>
       </View>

@@ -31,10 +31,10 @@ export default function AwardScreen({setIndex}: AwardScreenProps) {
               details='Mathematics, Computer Science, Chemistry Tutor\nJanuary 2024 - CURRENT' />
             <SectionItem
               title='Jeons World Martial Arts, Utah'
-              details='Assistant Instructure\nJuly 2024 - CURRENT' />
+              details='Assistant Instructor\nJuly 2024 - CURRENT' />
             <SectionItem
               title='Mathematics Department, Weber State University'
-              details='Student Grader\nJanuary 2024 - CURRENT' />
+              details='Teaching Assistant\nJanuary 2024 - CURRENT' />
           </View>
         </View>
         <View style={styles.section}>

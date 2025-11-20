@@ -31,11 +31,10 @@ const PopupMenu = ({ visible, onClose }: { visible: boolean; onClose: () => void
       alert('All fields are required.');
       return;
     }
-
     const templateParams = { user_name: name, user_email: email, message };
 
     emailjs
-      .send('service_nxck3ab', 'template_9zk1vce', templateParams, 'uUiV-mAoy_Iul98tj')
+      .send('service_bvw57bn', 'template_9zk1vce', templateParams, 'uUiV-mAoy_Iul98tj')
       .then(() => {
         alert('Your message has been sent!');
         setName('');
