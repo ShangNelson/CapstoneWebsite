@@ -103,7 +103,7 @@ export default function HomeScreen({ setIndex }: HomeScreenProps) {
         <View style={styles.header}>
           <Image source={require('@/assets/images/bgLess.png')} style={styles.profileImage} />
           <Text style={styles.name}>Shang Nelson</Text>
-          <Text style={styles.title}>Software Developer, Baker, Mathematics Major</Text>
+          <Text style={styles.title}>Mathematics Major, Baker, Software Developer</Text>
         </View>
 
         {/* About Section */}
