@@ -64,9 +64,8 @@ export default function AwardScreen({setIndex}: AwardScreenProps) {
           <Text style={styles.sectionTitle}>Other Recognitions</Text>
           <View style={styles.recognitionItem}>
             <SectionItem
-              title="Second Degree Black Belt"
-              details='Awarded by Jeons World Martial Arts, October 2022'
-              imageSource={require('@/assets/images/bgLess.png')}/>
+              title="Third Degree Black Belt"
+              details='Awarded by Jeons World Martial Arts, March 2025'/>
           </View>
           <View style={styles.recognitionItem}>
 
