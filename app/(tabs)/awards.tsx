@@ -22,6 +22,9 @@ export default function AwardScreen({setIndex}: AwardScreenProps) {
           <Text style={styles.sectionTitle}>Awards</Text>
           <View style={styles.awardItem}>
             <SectionItem
+              title='SCUDEM 2025 Meritorious'
+              details='Awarded meritorious submission in the SCUDEM Competition Oct-Nov 2025' />
+            <SectionItem
               title='MCM/ICM 2025 Participant'
               details='Awarded successful participant in the MCM/ICM 2025 Competition, Jan 2025' />
             <SectionItem
