@@ -21,7 +21,6 @@ const Layout: React.FC = () => {
     { key: 'home', title: 'Home' },
     { key: 'awards', title: 'Awards' },
     { key: 'career', title: 'Career' },
-    { key: 'statement', title: 'Statement' },
     { key: 'academic', title: 'Academic' },
     { key: 'creative', title: 'Github' },
   ]);
@@ -117,8 +116,6 @@ const Layout: React.FC = () => {
               switch (route.key) {
                 case 'home':
                   return <HomeScreen setIndex={setIndex} />;
-                case 'statement':
-                  return <StatementScreen setIndex={setIndex} />;
                 case 'awards':
                   return <AwardsScreen setIndex={setIndex} />;
                 case 'academic':

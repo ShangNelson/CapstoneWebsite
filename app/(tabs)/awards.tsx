@@ -29,7 +29,7 @@ export default function AwardScreen({setIndex}: AwardScreenProps) {
               details='Awarded successful participant in the MCM/ICM 2025 Competition, Jan 2025' />
             <SectionItem
               title='Roy & Elva Miller Memorial Scholarship'
-              details='Awarded through Weber State University for academic excellence, May 2024' />
+              details='Awarded through Weber State University for academic excellence, 2024 - 2026' />
             <SectionItem
               title='MirAftabi Award'
               details='Awarded by the Mathematics department, Weber State University, April 2024'

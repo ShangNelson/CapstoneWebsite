@@ -40,6 +40,9 @@ export default function AcademicScreen({setIndex}: AcademicScreenProps) {
         <PdfButton 
           title="Research Bibliography on Youth Sports" 
           pdfPath={'/pdfs/Research Paper 2.pdf'} />
+        <PdfButton 
+          title="Taekwondo 3rd Degree Black Belt Essay" 
+          pdfPath={'/pdfs/34d Degree Essay.pdf'} />
       </View>
     
       <View style={styles.header}>
@@ -48,7 +51,7 @@ export default function AcademicScreen({setIndex}: AcademicScreenProps) {
 
       <View style={styles.bodyAcheivements}>
         <SectionItem
-          title='Mathematics Club President -- 2025-2026'
+          title='Mathematics Club President -- 2025-2027'
           details='Organized outreach to students accross campus through stands setup at events. Handled budget and funding.'
           style={styles.sectionItemStyle}/>
         <SectionItem

@@ -112,7 +112,7 @@ export default function HomeScreen({ setIndex }: HomeScreenProps) {
             Hello, my name is Shang Nelson, and I am a student of Weber State University. I work
             professionally as a baker and enjoy personal programming projects. I am currently a
             mathematics major and plan to attend graduate school at the University of Utah in Fall
-            2026. My goal is to become a professor of mathematics.
+            2027. My goal is to become a professor of mathematics.
           </Text>
         </View>
 

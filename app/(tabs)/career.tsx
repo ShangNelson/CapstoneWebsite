@@ -27,11 +27,11 @@ export default function AwardScreen({setIndex}: AwardScreenProps) {
               title='Parsons Bakery, Utah'
               details='Baker, Cashier, Janitor\nFeburary 2022 - CURRENT' />
             <SectionItem
-              title='Davis Learning Center, Weber State University'
-              details='Mathematics, Computer Science, Chemistry Tutor\nJanuary 2024 - CURRENT' />
+              title='Davis Tutoring Center, Weber State University'
+              details='Mathematics, Computer Science, Chemistry, Physics Tutor\nJanuary 2024 - CURRENT' />
             <SectionItem
               title='Jeons World Martial Arts, Utah'
-              details='Assistant Instructor\nJuly 2024 - CURRENT' />
+              details='Instructor\nJuly 2024 - CURRENT' />
             <SectionItem
               title='Mathematics Department, Weber State University'
               details='Teaching Assistant\nJanuary 2024 - CURRENT' />
